@@ -2,7 +2,7 @@ import Axios from 'axios';
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
-console.log(apiKey);
+
 
 
 const url = 'https://api.themoviedb.org/3';
@@ -87,11 +87,12 @@ export const fetchTopratedMovie = async () => {
         const modifiedData = data['results'].map((m) => ({
             id: m['id'],
             backPoster: posterUrl + m['backdrop_path'],
-            popularity: m['popularith'],
+            popularity: m['popularity'],
             title: m['title'],
             poster: posterUrl + m['poster_path'],
             overview: m['overview'],
             rating: m['vote_average'],
+            vote_count: m['vote_count'],
         }))
 
         return modifiedData;

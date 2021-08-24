@@ -33,25 +33,29 @@ function HomePage() {
   }, []);
 
 
-  const topRatedList = topRated.slice(0, 4).map((item, index) => {
-    return (
-      <div className="col-md-3" key={index}>
-        <div className="card">
-          <Link to={`/movie/${item.id}`}>
-            <img className="img-fluid" src={item.poster} alt={item.title}></img>
-          </Link>
-        </div>
-        <div className="mt-3">
-          <p style={{ fontWeight: "bolder" }}>{item.title}</p>
-          <p>Rated: {item.rating}</p>
-          
-        </div>
-      </div>
-    );
-  });
 
-  return topRatedList;
+    return (
+    
+      <div className = "row">
+        <h2 >Top Rated Movies</h2>
+          {topRated.slice(0, 20).filter((item) => item.vote_count > 3200).map((item, index) => 
+            <div className="card col-lg-2" key = {index}>
+              <Link to={`/movie/${item.id}`}>
+                <img className="img-fluid" src={item.poster} alt={item.title}></img>
+              </Link>
+              <div className="mt-3">
+                <p style={{ fontWeight: "bolder" }}>{item.title}</p>
+                <p>Rated: {item.rating}</p>
+                <p>Vote Count: {item.vote_count}</p>
+              </div>
+            </div>
+          )}
+        </div>
+        
+    );
   }
+
+  
   
   export default HomePage;
   
