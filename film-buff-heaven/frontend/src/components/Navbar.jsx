@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import { useHistory} from 'react-router-dom';
 import {
@@ -31,7 +32,9 @@ function NavBar(){
         <div >     
             <Navbar className = "dashNav" light expand="md">
                 <NavbarBrand className = "logo"  href="/"><img src = {Logo} alt ="logo"/></NavbarBrand>
-                <NavbarText className = "nav-buttons"><Button  color="primary">Sign In</Button>{' '}</NavbarText>
+                <Link className = "nav-buttons" to={'/login'}>
+                    <NavbarText ><Button  color="primary">Sign In</Button>{' '}</NavbarText>
+                </Link>
                 <NavbarText ><Button  color="primary">Random Movie</Button>{' '}</NavbarText>
             </Navbar>
         </div>
