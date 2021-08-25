@@ -1,10 +1,12 @@
 import React from 'react';
 import Navbar from '../Navbar.jsx';
+import InformationPage from './InformationPage.jsx';
 
 function Information() {
     return (
       <div>
-        <h1>Test</h1>
+        <Navbar/>
+        <InformationPage/>
       </div>
     );
   }
