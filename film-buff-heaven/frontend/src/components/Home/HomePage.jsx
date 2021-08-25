@@ -37,7 +37,7 @@ function HomePage() {
     return (
     
       <div className = "row">
-        <h2 >Top Rated Movies</h2>
+        <h2 className = "home-title">Top Rated Movies</h2>
           {topRated.slice(0, 20).filter((item) => item.vote_count > 3200).map((item, index) => 
             <div className="card col-lg-2" key = {index}>
               <Link to={`/movie/${item.id}`}>

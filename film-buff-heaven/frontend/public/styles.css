@@ -6,6 +6,11 @@
     margin-right:78%;
 }
 
+.nav-buttons{
+  margin-left: 70%;
+  padding-right: 2%;
+}
+
 header.masthead {
     position: relative;
     background-color: #343a40;
@@ -56,3 +61,6 @@ header.masthead {
   }
   
 
+  .home-title{
+    text-align: center;
+  }

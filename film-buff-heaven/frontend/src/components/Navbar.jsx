@@ -31,17 +31,13 @@ function NavBar(){
         <div >     
             <Navbar className = "dashNav" light expand="md">
                 <NavbarBrand className = "logo"  href="/"><img src = {Logo} alt ="logo"/></NavbarBrand>
-                <NavbarToggler onClick={toggle} />
-                <Collapse isOpen={isOpen} navbar>
-                <Nav className="nav" navbar>
-                </Nav>
-               
-                </Collapse>
+                <NavbarText className = "nav-buttons"><Button  color="primary">Sign In</Button>{' '}</NavbarText>
+                <NavbarText ><Button  color="primary">Random Movie</Button>{' '}</NavbarText>
             </Navbar>
         </div>
 
     );
 }
 
-//<NavbarText ><Button onClick = {logout} color="primary">LOG OUT</Button>{' '}</NavbarText>
+
 export default NavBar;
