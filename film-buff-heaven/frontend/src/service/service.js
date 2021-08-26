@@ -107,6 +107,7 @@ export const fetchMovieDetail = async (id) => {
             params: {
                 api_key: apiKey,
                 language: 'en_US'
+   
             }
         });
         return data;

@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { fetchMovieDetail } from '../../service/service';
+import {useParams } from 'react-router-dom';
 
 
 
 function InformationPage() {
   const [movies, setMovies] = useState([]);
+  let params = useParams();
   
+  
+
   useEffect(() => {
     const fetchAPI = async () => {
-      //setNowPlaying(await fetchMovies());
-      setMovies(await fetchMovieDetail());
+      setMovies(await fetchMovieDetail(params.id));
       
     };
 
@@ -18,7 +21,7 @@ function InformationPage() {
 
   return (
     <div>
-      <h1>Test</h1>
+      <h1>{movies.title}</h1>
     </div>
   );
 

@@ -40,7 +40,7 @@ function HomePage() {
         <h2 className = "home-title">Top Rated Movies</h2>
           {topRated.slice(0, 20).filter((item) => item.vote_count > 3200).map((item, index) => 
             <div className="card movie-card  col-lg-2" key = {index}>
-              <Link to={`/movie/${item.id}`}>
+              <Link to={`/information/${item.id}`}>
                 <img className="img-fluid" src={item.poster} alt={item.title}></img>
               </Link>
               <div className="mt-3">
