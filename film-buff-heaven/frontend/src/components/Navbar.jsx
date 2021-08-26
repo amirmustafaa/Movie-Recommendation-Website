@@ -24,7 +24,7 @@ function NavBar(){
     //     history.replace("/");
     // }
 
-    
+    let num =Math.floor(Math.random() * 500)
 
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
@@ -35,7 +35,9 @@ function NavBar(){
                 <Link className = "nav-buttons" to={'/login'}>
                     <NavbarText ><Button  color="primary">Sign In</Button>{' '}</NavbarText>
                 </Link>
-                <NavbarText ><Button  color="primary">Random Movie</Button>{' '}</NavbarText>
+                <Link to={`/information/${num}`}>
+                    <NavbarText ><Button  color="primary">Random Movie</Button>{' '}</NavbarText>
+                </Link>
             </Navbar>
         </div>
 
