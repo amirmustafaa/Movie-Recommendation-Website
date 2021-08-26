@@ -5,6 +5,6 @@ import java.util.ArrayList;
 public class List {
 	private String name;
 	
-	private ArrayList entries;
+	private ArrayList<String> entries;
 
 }
