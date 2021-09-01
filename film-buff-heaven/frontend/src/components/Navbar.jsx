@@ -17,7 +17,7 @@ import Logo from './logo.png';
 
 function NavBar(){
     // const cookies = new Cookies();
-    // let history = useHistory();
+     let history = useHistory();
 
     // function logout() {
     //     cookies.set("auth-token", "", { path: '/' }, {httpOnly:true});
@@ -35,7 +35,7 @@ function NavBar(){
                 <Link className = "nav-buttons" to={'/login'}>
                     <NavbarText ><Button  color="primary">Sign In</Button>{' '}</NavbarText>
                 </Link>
-                <Link to={`/information/${num}`}>
+                <Link  to={`/information/${num}`}>
                     <NavbarText ><Button  color="primary">Random Movie</Button>{' '}</NavbarText>
                 </Link>
             </Navbar>
