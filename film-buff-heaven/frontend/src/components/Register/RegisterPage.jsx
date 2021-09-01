@@ -1,103 +1,86 @@
-import React from 'react';
-import { useHistory} from 'react-router-dom';
+import React, {useState, useContext} from 'react';
+import { Link, useHistory} from 'react-router-dom';
+//import UserContext from "../../context/UserContext"
 import Axios from 'axios';
-import Cookies from 'universal-cookie';
+//import Cookies from 'universal-cookie';
+
+function RegisterPage (){
+  //const cookies = new Cookies();
+  //const { setUserData } = useContext(UserContext);
 
 
-function RegisterPage(){
-    // const cookies = new Cookies();
-    // const { setUserData } = useContext(UserContext);
+  let history = useHistory();
+
+  const [state, setState] = useState({
+    username:  "",
+    email: "",
+    password:"",
+    passwordCheck:"",
 
 
-    // let history = useHistory();
+  });
 
-    // const [state, setState] = useState({
-    //     username:  "",
-    //     email: "",
-    //     password:"",
-    //     passwordCheck:"",
+  function handleChange(event){
+    const value = event.target.value;
+    setState({
+      ...state,
+      [event.target.name]: value
+    });
+  }
+
+  const  createUser = async (event) =>{
+    event.preventDefault();
+    const userObject = {
+      username: state.username,
+      email: state.email,
+      password: state.password,
+      passwordCheck: state.passwordCheck,
+
+    };
+     await Axios.post("https://localhost:8080/api/auth/signup", userObject);
+
+    history.push("/");
+  };
 
 
-    // });
+  return(
+    <div className = "login-page">
+        <div className="container px-4 py-5 mx-auto login-box">
+        <div className="card card0">
+            <div className="d-flex flex-lg-row flex-column-reverse">
+                <div className="card card1">
+                    <div className="row justify-content-center my-auto">
+                        <div className="col-md-8 col-10 my-5">
+                            <h3 className="mb-5 text-center heading">Welcome to Money Portal Pro</h3>
+                            <h6 className="msg-info">Please Create Your Account</h6>
+                            <form>
+                              <div className="form-group"> <label className="form-control-label text-muted">Username</label> <input name ="username" onChange = {handleChange}  type="text"  placeholder="Username" className="form-control" required/> </div>
+                              <div className="form-group"> <label className="form-control-label text-muted">Email</label> <input name ="email" onChange = {handleChange}  type="email"  placeholder="Email" className="form-control" required/> </div>
+                              <hr />
+                              <div className="form-group"> <label className="form-control-label text-muted">Password</label> <input name = "password" onChange = {handleChange} type="password"  placeholder="Password" className="form-control" required/> </div>
+                              <div className="form-group"> <label className="form-control-label text-muted">Confirm Password</label> <input name = "passwordCheck" onChange = {handleChange} type="password"  placeholder="Confirm Password" className="form-control" required/> </div>
+                              <div className="row justify-content-center my-3 px-3"> <button onClick= {createUser} className="btn-block btn-color">Create Account</button> </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div className="bottom text-center mb-5">
+                        <p href="#" className="sm-text mx-auto mb-3">Already Have an Account?<Link to="/"><button className="btn btn-white ml-2">LOGIN</button></Link></p>
+                    </div>
 
-    // function handleChange(event){
-    //     const value = event.target.value;
-    //     setState({
-    //     ...state,
-    //     [event.target.name]: value
-    //     });
-    // }
-
-    // const  createUser = async (event) =>{
-    //     event.preventDefault();
-    //     const userObject = {
-    //     email: state.email,
-    //     password: state.password,
-    //     passwordCheck: state.passwordCheck,
-    //     username: state.username,
-    //     };
-    //     await Axios.post("http://localhost:5000/users/register", userObject)
-    //     .catch(function (error) {
-    //     if (error.response) {
-    //         alert(error.response.data.msg);
-    //     }
-    //     });
-
-    //     const loginRes = await  Axios.post("http://localhost:5000/users/login", {
-    //     email:state.email,
-    //     password:state.password
-    //     });
-    //     setUserData({
-    //     token: loginRes.data.token,
-    //     user: loginRes.data.user
-    //     });
-    //     cookies.set("auth-token", loginRes.data.token,{ path: '/' }, {httpOnly:true});
-    //     history.push("/login");
-    // };
-
-    
-    return(
-        <div class="container register-page">
-            <div class="row">
-            <div class="col-lg-10 col-xl-9 mx-auto">
-                <div class="card card-signin flex-row my-5">
-                <div class="card-img-left d-none d-md-flex">
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title text-center">Register</h5>
-                    <form class="form-signin">
-                    <div class="form-label-group">
-                        <input name ="username"  type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus/>
-                        <label for="inputUserame">Username</label>
+                <div className="card card2">
+                    <div className="my-auto mx-md-5 px-md-5 right">
+                        <h3 className="text-white">Track Your Transactions and Budget for the Future.</h3> 
                     </div>
-
-                    <div class="form-label-group">
-                        <input name ="email"type="email" id="inputEmail" class="form-control" placeholder="Email address" required/>
-                        <label for="inputEmail">Email address</label>
-                    </div>
-
-                    <hr/>
-
-                    <div class="form-label-group">
-                        <input name = "password" type="password" id="inputPassword" class="form-control" placeholder="Password" required/>
-                        <label for="inputPassword">Password</label>
-                    </div>
-
-                    <div class="form-label-group">
-                        <input  name = "passwordCheck"   type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required/>
-                        <label for="inputConfirmPassword">Confirm password</label>
-                    </div>
-
-                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
-
-                    </form>
-                </div>
                 </div>
             </div>
-            </div>
-     </div>
+        </div>
+      </div>
+  </div>
 
-    );
+
+  );
 }
+
 
 export default RegisterPage;
