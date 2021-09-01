@@ -40,18 +40,34 @@ function App() {
     checkLoggedIn();
   }, []);
 
-  return (
-    <div>
-      <Router>
+  return(
+    <Router>
+      <UserContext.Provider value = {{userData, setUserData}}>
         <Switch>
           <Route path= "/" exact component = {Home} />
           <Route path= "/information/:id" component = {Information} />
           <Route path= "/login" component = {Login} />
           <Route path= "/register" component = {Register} />
-        </Switch>  
 
+        </Switch>
+          {userData.token ? (
+            <Switch>
+              
+            </Switch>
+
+   
+
+          ) : (
+
+
+            <>
+            </>
+          )}
+         
+      </UserContext.Provider>
     </Router>
-    </div>
+
+
   );
 }
 
