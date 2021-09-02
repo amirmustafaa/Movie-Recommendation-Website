@@ -35,7 +35,7 @@ function HomePage() {
 
 
     return (
-      <div>
+      <div className = "home-content">
         <h2 className = "home-title">Top Rated Movies</h2>
         <div className = "row movie-home">
           

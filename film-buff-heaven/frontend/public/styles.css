@@ -71,11 +71,15 @@ header.masthead {
     }
   }
   
+  .home-content{
+    background-color: #041c2c;
+  }
 
   .home-title{
     text-align: center;
     padding-top: 2%;
     padding-bottom: 2%;
+    color: white;
   }
 
   .movie-home{
