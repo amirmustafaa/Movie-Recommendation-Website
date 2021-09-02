@@ -12,6 +12,13 @@
   padding-right: 2%;
 }
 
+@media screen and (max-width: 768px) {
+  .nav-buttons{
+    margin-left: 50%;
+  }
+}
+
+
 .nav-links{
   background-color: #007bc4 !important;
   color: white !important;
@@ -88,6 +95,8 @@ header.masthead {
 
   .movie-card{
     margin: 1%;
+    background-color:#121212 !important;
+    color: white;
   }
 
 

@@ -42,11 +42,17 @@ function NavBar(){
     return(
         <div >     
             <Navbar className = "dashNav fixed-top" light expand="md">
+                
                 <NavbarBrand className = "logo"  href="/"><img src = {Logo} alt ="logo"/></NavbarBrand>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                <Nav className="nav" navbar>
+                </Nav>
                 <Link className = "nav-buttons" to={'/login'}>
                     <button className = "btn nav-links">Sign In</button>
                 </Link>
                 <button className = "btn nav-links" onClick={() => {window.location.href="/information/" + num}} >Random Movie</button>
+                </Collapse>
             </Navbar>
         </div>
 
