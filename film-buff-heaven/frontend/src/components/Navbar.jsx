@@ -41,7 +41,7 @@ function NavBar(){
     const toggle = () => setIsOpen(!isOpen);
     return(
         <div >     
-            <Navbar className = "dashNav" light expand="md">
+            <Navbar className = "dashNav fixed-top" light expand="md">
                 <NavbarBrand className = "logo"  href="/"><img src = {Logo} alt ="logo"/></NavbarBrand>
                 <Link className = "nav-buttons" to={'/login'}>
                     <NavbarText ><Button  color="primary">Sign In</Button>{' '}</NavbarText>
