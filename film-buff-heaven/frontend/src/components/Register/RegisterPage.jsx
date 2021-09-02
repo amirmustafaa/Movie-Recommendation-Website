@@ -37,7 +37,7 @@ function RegisterPage (){
       passwordCheck: state.passwordCheck,
 
     };
-     await Axios.post("https://localhost:8080/api/auth/signup", userObject);
+     await Axios.post("http://localhost:8080/api/auth/signup", userObject);
 
     history.push("/");
   };
