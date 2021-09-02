@@ -47,7 +47,7 @@ header.masthead {
   
   @media (min-width: 768px) {
     header.masthead {
-      padding-top: 12rem;
+      padding-top: 20rem;
       padding-bottom: 12rem;
     }
   
@@ -72,7 +72,7 @@ header.masthead {
   }
   
   .home-content{
-    background-color: #041c2c;
+    background-color: #063b5e;
   }
 
   .home-title{
@@ -94,3 +94,12 @@ header.masthead {
   .info-title{
     padding-top: 5%;;
   }
+
+  footer{
+    background-color: #007bc4;
+  }
+
+  .footer-text{
+    color: white !important;
+  }
+  

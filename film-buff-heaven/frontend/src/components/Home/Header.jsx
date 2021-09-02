@@ -7,7 +7,7 @@ function Header() {
           <div className="container">
             <div className="row">
               <div className="col-xl-9 mx-auto">
-                <h1 className="mb-5">Test</h1>
+
               </div>
               
             </div>
