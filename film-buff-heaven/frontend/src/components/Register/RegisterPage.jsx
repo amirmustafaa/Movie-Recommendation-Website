@@ -45,9 +45,6 @@ function RegisterPage (){
 
   return(
     <div className = "login-page">
-        <div className="container px-4 py-5 mx-auto login-box">
-        <div className="card card0">
-            <div className="d-flex flex-lg-row flex-column-reverse">
                 <div className="card card1">
                     <div className="row justify-content-center my-auto">
                         <div className="col-md-8 col-10 my-5">
@@ -64,20 +61,11 @@ function RegisterPage (){
                         </div>
                     </div>
                     <div className="bottom text-center mb-5">
-                        <p href="#" className="sm-text mx-auto mb-3">Already Have an Account?<Link to="/"><button className="btn btn-white ml-2">LOGIN</button></Link></p>
+                        <p href="#" className="sm-text mx-auto mb-3">Already Have an Account?<Link to="/login"><button className="btn btn-white ml-2">LOGIN</button></Link></p>
                     </div>
 
-                </div>
-                <div className="card card2">
-                    <div className="my-auto mx-md-5 px-md-5 right">
-                        <h3 className="text-white">Track Your Transactions and Budget for the Future.</h3> 
-                    </div>
                 </div>
             </div>
-        </div>
-      </div>
-  </div>
-
 
   );
 }
