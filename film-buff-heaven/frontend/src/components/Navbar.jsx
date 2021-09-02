@@ -44,11 +44,9 @@ function NavBar(){
             <Navbar className = "dashNav fixed-top" light expand="md">
                 <NavbarBrand className = "logo"  href="/"><img src = {Logo} alt ="logo"/></NavbarBrand>
                 <Link className = "nav-buttons" to={'/login'}>
-                    <NavbarText ><Button  color="primary">Sign In</Button>{' '}</NavbarText>
+                    <button className = "btn nav-links">Sign In</button>
                 </Link>
-            
-                <NavbarText ><Button onClick={() => {window.location.href="/information/" + num}} color="primary">Random Movie</Button>{' '}</NavbarText>
-                
+                <button className = "btn nav-links" onClick={() => {window.location.href="/information/" + num}} >Random Movie</button>
             </Navbar>
         </div>
 

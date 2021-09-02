@@ -1,5 +1,5 @@
 .dashNav{
-    background-color: #f5f5f5;
+    background-color: #007bc4;
 }
 
 .logo{
@@ -9,6 +9,16 @@
 .nav-buttons{
   margin-left: 70%;
   padding-right: 2%;
+}
+
+.nav-links{
+  background-color: #007bc4 !important;
+  color: white !important;
+}
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
 }
 
 header.masthead {
@@ -73,4 +83,9 @@ header.masthead {
 
   .movie-card{
     margin: 1%;
+  }
+
+
+  .info-title{
+    padding-top: 5%;;
   }

@@ -21,7 +21,7 @@ function InformationPage() {
 
   return (
     <div>
-      <h1>{movies.title}</h1>
+      <h1 className = "info-title">{movies.title}</h1>
     </div>
   );
 
