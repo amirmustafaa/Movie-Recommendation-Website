@@ -28,11 +28,6 @@ button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled)
 }
 /********************* Header ******************************/
 
-
-
-
-
-
 header.masthead {
     position: relative;
     background-color: #343a40;
@@ -82,8 +77,11 @@ header.masthead {
     }
   }
   
+
+  /********************* Home Content ******************************/
   .home-content{
-    background-color: #063b5e;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(54,0,29,1) 54%, rgba(0,0,0,1) 100%);
+
   }
 
   .home-title{
@@ -99,7 +97,7 @@ header.masthead {
 
   .movie-card{
     margin: 1%;
-    background-color:#121212 !important;
+    background-color: black!important;
     color: white;
   }
 
@@ -113,7 +111,7 @@ header.masthead {
   }
 
   footer{
-    background-color: #007bc4;
+    background-color: black;
   }
 
   .footer-text{

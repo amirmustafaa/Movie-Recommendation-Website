@@ -43,7 +43,7 @@ function HomePage() {
         <div className = "row movie-home">
           
             {topRated.slice(0, 20).filter((item) => item.vote_count > 3200).map((item, index) => 
-              <div className="card movie-card   col-sm-5 col-md-3 col-lg-2" key = {index}>
+              <div className="card movie-card  col-11 col-sm-5 col-md-3 col-lg-2" key = {index}>
                 <Link to={`/information/${item.id}`}>
                   <img className="img-fluid home-img" src={item.poster} alt={item.title}></img>
                 </Link>
@@ -55,7 +55,7 @@ function HomePage() {
               </div>
             )}
             {topRated2.slice(0, 20).filter((item) => item.vote_count > 3200).map((item, index) => 
-              <div className="card movie-card col-sm-5 col-md-3  col-lg-2" key = {index}>
+              <div className="card movie-card col-11 col-sm-5 col-md-3  col-lg-2" key = {index}>
                 <Link to={`/information/${item.id}`}>
                   <img className="img-fluid home-img" src={item.poster} alt={item.title}></img>
                 </Link>
