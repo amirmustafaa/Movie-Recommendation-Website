@@ -51,7 +51,7 @@ function LoginPage(){
                             <form>
                               <div className="form-group"> <label className="form-control-label text-muted">Username</label> <input name ="username" onChange = {handleChange}  type="text"  placeholder="Username" className="form-control" required/> </div>
                               <div className="form-group"> <label className="form-control-label text-muted">Password</label> <input name = "password" onChange = {handleChange} type="password"  placeholder="Password" className="form-control" required/> </div>
-                              <div className="row justify-content-center my-3 px-3"> <button type = "submit" onClick= {handleClick} className="btn-block btn-color">Login to Portal</button> </div>
+                              <div className="row justify-content-center my-3 px-3"> <button type = "submit" onClick= {handleClick} className="btn-block btn-color">Login</button> </div>
                             </form>
                         </div>
                     </div>

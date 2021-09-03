@@ -1,5 +1,6 @@
 .dashNav{
     background-color: #007bc4;
+    
 }
 
 .logo{
@@ -32,7 +33,7 @@
 header.masthead {
     position: relative;
     background-color: #343a40;
-    background: url('./header.jpg') no-repeat center center;
+    background: url('./header2.jpg') no-repeat center center;
     background-size: cover;
     padding-top: 8rem;
     padding-bottom: 8rem;
@@ -191,11 +192,33 @@ header.masthead {
       box-shadow: none !important;
       outline-width: 0
   }
-  
-  
+
+  .btn-color {
+    border-radius: 50px;
+    color: black;
+    padding: 15px;
+    cursor: pointer;
+    border: none !important;
+    margin-top: 40px
+}
+
   
   .card1 {
       width: 50%;
       
   }
+
+  @media screen and (max-width: 768px) {
+    .card1{
+      width:90%;
+    }
+
+    .login-page{
+      padding:20%;
+    }
+
+    .register-page{
+      padding:20%;
+    }
+}
   
