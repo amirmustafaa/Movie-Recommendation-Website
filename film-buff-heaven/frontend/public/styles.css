@@ -1,34 +1,37 @@
-.dashNav{
-    background-color: #007bc4;
-    
+/********************* Navbar ******************************/
+.navbar-custom {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-.logo{
-    margin-right:78%;
-    padding-left: 1%;
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
 
-.nav-buttons{
-  margin-left: 70%;
-  padding-right: 2%;
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
-@media screen and (max-width: 768px) {
-  .nav-buttons{
-    margin-left: 50%;
-  }
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+  cursor: pointer;
 }
+/********************* Header ******************************/
 
 
-.nav-links{
-  background-color: #007bc4 !important;
-  color: white !important;
-}
 
-.btn:focus,.btn:active {
-  outline: none !important;
-  box-shadow: none;
-}
+
+
 
 header.masthead {
     position: relative;

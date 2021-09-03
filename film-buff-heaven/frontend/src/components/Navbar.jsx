@@ -40,7 +40,30 @@ function NavBar(){
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     return(
-        <div >     
+        <div>
+            <nav className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+                <div className="container px-5">
+                    <a className="navbar-brand" href="#page-top">Film Buff Heaven</a>
+                    <div className="navbar-collapse collapse show" id="navbarResponsive">
+                        <ul className="navbar-nav ms-auto">
+                            <li className="nav-item"><a className="nav-link" href="/login">Log In</a></li>
+                            <Link style={{ textDecoration: 'none' }}>
+                            <li className="nav-item nav-link" onClick={() => {window.location.href="/information/" + num}}>Random Movie</li>
+                            </Link>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+
+    );
+}
+
+
+export default NavBar;
+
+{/* <div >     
             <Navbar className = "dashNav fixed-top" light expand="md">
                 
                 <NavbarBrand className = "logo"  href="/"><img src = {Logo} alt ="logo"/></NavbarBrand>
@@ -54,10 +77,4 @@ function NavBar(){
                 <button className = "btn nav-links" onClick={() => {window.location.href="/information/" + num}} >Random Movie</button>
                 </Collapse>
             </Navbar>
-        </div>
-
-    );
-}
-
-
-export default NavBar;
+            <div>      */}
