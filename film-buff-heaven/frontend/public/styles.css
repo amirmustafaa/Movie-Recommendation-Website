@@ -118,7 +118,9 @@ header.masthead {
     color: white !important;
   }
   
-
+  .logo-heading{
+    color: white;
+  }
   .login-page{
     background-color: #063b5e;
     background-size: cover;

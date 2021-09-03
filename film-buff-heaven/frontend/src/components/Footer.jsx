@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from './tmdbLogo.png'
 
 
 
@@ -6,6 +7,8 @@ function Footer() {
     return (
       <div>
         <footer className="page-footer font-small unique-color-dark pt-4">
+        <h2 className = "logo-heading">Powered By:</h2>
+        <img src = {Logo} alt="TMDB Logo"></img>
         <div className="container">
           <ul className="list-unstyled list-inline text-center py-2">
             <li className="list-inline-item">
