@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-  fetchMovies,
-  fetchGenre,
-  fetchMovieByGenre,
-  fetchPersons,
   fetchTopratedMovie,
   fetchTopratedMovie2
 } from "../../service/service.js";
@@ -16,18 +12,12 @@ import { Link } from "react-router-dom";
 function HomePage() {
   
   //const [nowPlaying, setNowPlaying] = useState([]);
-  const [genres, setGenres] = useState([]);
-  const [movieByGenre, setMovieByGenre] = useState([]);
-  const [persons, setPersons] = useState([]);
   const [topRated, setTopRated] = useState([]);
   const [topRated2, setTopRated2] = useState([]);
 
   useEffect(() => {
     const fetchAPI = async () => {
       //setNowPlaying(await fetchMovies());
-      setGenres(await fetchGenre());
-      setMovieByGenre(await fetchMovieByGenre(28));
-      setPersons(await fetchPersons());
       setTopRated(await fetchTopratedMovie());
       setTopRated2(await fetchTopratedMovie2());
     };

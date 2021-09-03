@@ -7,6 +7,7 @@ import Home from './Home/Home.jsx';
 import Information from './Information/Information.jsx';
 import Login from './Login/Login.jsx';
 import Register from './Register/Register.jsx';
+import CreateList from './Lists/CreateList.jsx';
 
 function App() {
   const cookies = new Cookies();
@@ -53,6 +54,7 @@ function App() {
         </Switch>
           {userData.token ? (
             <Switch>
+              <Route path= "/createlist" component = {CreateList} />
               
             </Switch>
 
