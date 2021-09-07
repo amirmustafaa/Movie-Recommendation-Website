@@ -34,14 +34,10 @@ function CreatListPage() {
     useEffect(() => {
         setList(oldArray => [...oldArray, movie]); 
     }, [movie]);
-
-    console.log(movie);
      
     
-    
-    
-    const listItems = list.map((number) =>
-        <li><img   width="100" height="150" src ={number} alt="Movie Poster"></img></li>
+    const listItems = list.filter((number)=> number.length > 0).map((number) =>
+        <li><img width="100" height="150" src ={number} alt="Movie Poster"></img></li>
     );
 
     return(
