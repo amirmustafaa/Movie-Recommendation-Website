@@ -52,6 +52,7 @@ function CreatListPage() {
                  <input name = "moviename" onChange = {handleChange} className="form-control" type="text" placeholder="Search" aria-label="Search"/>
              </div>
              <div className="row justify-content-center my-3 px-3"> <button type = "submit" onClick= {fetchAPI} className="btn-block btn-color">Search</button> </div>
+             <div className="row justify-content-center my-3 px-3"> <button type = "submit"  className="btn-block btn-color">Create List</button> </div>
         </div>
     );
 }
