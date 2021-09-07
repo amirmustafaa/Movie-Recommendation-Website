@@ -9,9 +9,12 @@ function CreatListPage() {
         moviename: "",
       });
 
-    const [list, setList] = useState([])
- 
+    
+   
     const [movie, setMovie] = useState([]);
+
+    const [list, setList] = useState([])
+
 
     function handleChange(event){
         const value = event.target.value;
@@ -20,34 +23,30 @@ function CreatListPage() {
           [event.target.name]: value
         });
       }
-
+    
     const fetchAPI = async () => {
+        
         setMovie(await fetchMovieSearch(state.moviename));
+        
         
     };
 
-
     useEffect(() => {
-
+        setList(oldArray => [...oldArray, movie]); 
     }, [movie]);
 
-    
-    useEffect(() => {
-        if(movie.results !== undefined){
-            setList(oldArray => [...oldArray,'https://image.tmdb.org/t/p/original/' + movie.results[0].poster_path]);
-         }
-
-    }, [movie]);
+    console.log(movie);
+     
     
     
-
+    
     const listItems = list.map((number) =>
         <li><img   width="100" height="150" src ={number} alt="Movie Poster"></img></li>
     );
 
     return(
         <div>
-            <ul>{listItems}</ul>
+            <ol>{listItems}</ol>
             <div className="searchbar md-form active-cyan-2 mb-3">
                  <input name = "moviename" onChange = {handleChange} className="form-control" type="text" placeholder="Search" aria-label="Search"/>
              </div>

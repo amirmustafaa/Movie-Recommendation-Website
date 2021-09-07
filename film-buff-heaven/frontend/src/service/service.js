@@ -11,7 +11,7 @@ const movieUrl = `${url}/movie`;
 const genreUrl = `${url}/genre/movie/list`;
 const moviesUrl = `${url}/discover/movie`;
 const personUrl = `${url}/trending/person/week`;
-const searchUrl = `${url}/search/movie/`;
+const searchUrl = `${url}/search/movie`;
 
 
 
@@ -94,7 +94,11 @@ export const fetchMovieSearch = async (name) => {
                 query: name
             }
         })
-        return data;
+        const posterUrl = 'https://image.tmdb.org/t/p/original/';
+        if(data.results[0] === undefined){
+            return "test";
+        }
+        return posterUrl+data.results[0].poster_path;
     } catch (error) { }
 }
 
