@@ -88,11 +88,12 @@ export const fetchMovieDetail = async (id) => {
 
 export const fetchMovieSearch = async (name) => {
     try {
-        const { data } = await Axios.get(`${searchUrl}/${name}`, {
+        const { data } = await Axios.get(`${searchUrl}`, {
             params: {
                 api_key: apiKey,
+                query: name
             }
-        });
+        })
         return data;
     } catch (error) { }
 }
