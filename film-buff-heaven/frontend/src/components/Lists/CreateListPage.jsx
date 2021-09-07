@@ -31,9 +31,10 @@ function CreatListPage() {
 
     }, [movie]);
 
+    
     useEffect(() => {
         if(movie.results !== undefined){
-            setList(oldArray => [...oldArray,movie.results[0].title]);
+            setList(oldArray => [...oldArray,'https://image.tmdb.org/t/p/original/' + movie.results[0].poster_path]);
          }
 
     }, [movie]);
@@ -41,7 +42,7 @@ function CreatListPage() {
     
 
     const listItems = list.map((number) =>
-        <li>{number}</li>
+        <li><img   width="100" height="150" src ={number} alt="Movie Poster"></img></li>
     );
 
     return(
