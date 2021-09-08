@@ -2,7 +2,7 @@ package com.filmbuffheaven.models;
 
 import java.util.ArrayList;
 
-public class List {
+public class MovieList {
 	private String name;
 	
 	private ArrayList<String> entries;
