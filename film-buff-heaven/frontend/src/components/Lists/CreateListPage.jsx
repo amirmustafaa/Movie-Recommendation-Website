@@ -10,7 +10,7 @@ function CreatListPage() {
         moviename: "",
       });
 
-    
+    const [name, setName] = useState();
    
     const [movie, setMovie] = useState([]);
 
@@ -32,8 +32,14 @@ function CreatListPage() {
     };
 
     const createList = async () =>{
-        const ListRes = await Axios.post("http://localhost:8080/api/auth/signin", list);
-        
+
+        const listObject = {
+            movielist: list,
+            name: name,
+          };
+
+        const ListRes = await Axios.post("http://localhost:8080/api/data/createList", listObject);
+
 
     }
 
