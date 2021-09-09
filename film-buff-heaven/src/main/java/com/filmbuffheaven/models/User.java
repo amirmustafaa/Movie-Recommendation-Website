@@ -9,6 +9,8 @@ import javax.persistence.*;
 //import javax.validation.constraints.NotBlank;
 //import javax.validation.constraints.Size;
 
+
+
 @Entity
 @Table(	name = "users", 
 		uniqueConstraints = { 
@@ -34,7 +36,8 @@ public class User {
 	private String password;
 
 	
-	
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<MovieList> movieLists = new ArrayList<>();
 
 	public User() {
 	}
