@@ -34,7 +34,7 @@ function CreatListPage() {
     const createList = async () =>{
 
         const listObject = {
-            movielist: list,
+            entries: list,
             name: name,
           };
 
