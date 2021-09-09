@@ -7,4 +7,20 @@ public class MovieList {
 	
 	private ArrayList<String> entries;
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public ArrayList<String> getEntries() {
+		return entries;
+	}
+
+	public void setEntries(ArrayList<String> entries) {
+		this.entries = entries;
+	}
+
 }

@@ -18,8 +18,10 @@ public class DataController {
 	
 	MovieList list;
 	@PostMapping("/createlist")
-	public ResponseEntity<?> createList( @RequestBody MovieList list  ) {
-		return null;
+	public ResponseEntity<?> createList( @RequestBody MovieList list) {
+		
+		
+		return ResponseEntity.ok("List Created");
 
 
 	}
