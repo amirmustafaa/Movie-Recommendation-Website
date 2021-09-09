@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.filmbuffheaven.models.MovieList;
+import com.filmbuffheaven.models.User;
 import com.filmbuffheaven.repository.ListRepository;
 
 
@@ -23,9 +24,9 @@ public class DataController {
 	
 	
 	@PostMapping("/createlist")
-	public ResponseEntity<?> createList( @RequestBody MovieList list) {
+	public ResponseEntity<?> createList( @RequestBody MovieList movieList) {
 		
-		listRepository.save(list);
+		listRepository.save(movieList);
 		return ResponseEntity.ok("List Created");
 
 

@@ -3,6 +3,12 @@ package com.filmbuffheaven.models;
 import java.util.ArrayList;
 
 public class MovieList {
+	public MovieList(String name, ArrayList<String> entries) {
+		super();
+		this.name = name;
+		this.entries = entries;
+	}
+
 	private String name;
 	
 	private ArrayList<String> entries;
