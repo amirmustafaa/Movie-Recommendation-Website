@@ -80,6 +80,14 @@ public class User {
 		this.password = password;
 	}
 
+	public List<MovieList> getMovieLists() {
+		return movieLists;
+	}
+
+	public void setMovieLists(MovieList movieList) {
+		this.movieLists.add(movieList);
+	}
+
 //	public Set<Role> getRoles() {
 //		return roles;
 //	}

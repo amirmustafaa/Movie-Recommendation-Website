@@ -1,5 +1,7 @@
 package com.filmbuffheaven.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.filmbuffheaven.repository.UserRepository;
 import com.filmbuffheaven.models.MovieList;
 import com.filmbuffheaven.models.User;
+import com.filmbuffheaven.payload.request.ListRequest;
 import com.filmbuffheaven.repository.ListRepository;
 
 
@@ -40,7 +43,25 @@ public class DataController {
 				.orElseThrow(() -> new RuntimeException("Error: User is not found."));
 		
 		listRepository.save(movieList);
+		userAccount.setMovieLists(movieList);
+		userRepository.save(userAccount);
+		
 		return ResponseEntity.ok("List Created");
+
+
+	}
+	
+	@PostMapping("/getlist")
+	public ResponseEntity<?> getList(@RequestBody ListRequest listRequest) {
+		UserDetails userDetails =
+				(UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		
+		MovieList movielist = listRepository.findById(listRequest.getListId()).orElseThrow(() -> new RuntimeException("Error: Movie List not found."));
+		
+		return ResponseEntity.ok(movielist);
+	
+		
+		
 
 
 	}

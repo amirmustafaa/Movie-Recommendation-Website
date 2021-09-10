@@ -1,14 +1,14 @@
 package com.filmbuffheaven.payload.request;
 
-public class AccountRequest {
-	private Long accountId;
+public class ListRequest {
+	private Long listId;
 
-	public Long getAccountId() {
-		return accountId;
+	public Long getListId() {
+		return listId;
 	}
 
-	public void setAccountId(Long accountId) {
-		this.accountId = accountId;
+	public void setListId(Long listId) {
+		this.listId = listId;
 	}
 
 
