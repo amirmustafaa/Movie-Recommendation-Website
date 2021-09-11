@@ -7,6 +7,7 @@ import {useParams } from 'react-router-dom';
 function InformationPage() {
   const [movies, setMovies] = useState([]);
   let params = useParams();
+  const posterUrl = 'https://image.tmdb.org/t/p/original/';
   
   
 
@@ -20,9 +21,46 @@ function InformationPage() {
   }, []);
 
   return (
-    <div>
-      <h1 className = "info-title">{movies.title}</h1>
+    <div className = "info-page">
+      <div className = "info-container">
+        <div class="card-group">
+          
+          <div class="card">
+            <img src = {posterUrl + movies.poster_path}></img>
+          </div>
+
+          <div class="card">
+            <h1 className = "card-title">{movies.title}</h1>
+            <h3>Description</h3>
+            <p>{movies.overview}</p>
+            <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <h3>Runtime</h3>
+                <p>{movies.runtime}</p>
+                <h3>Release Date</h3>
+                <p>{movies.release_date}</p>
+                <h3>Budget</h3>
+                <p>{movies.budget}</p>
+              </div>
+              <div class="col-sm">
+                <h3>Revenue</h3>
+                <p>{movies.revenue}</p>
+                <h3>Rating</h3>
+                <p>{movies.vote_average}</p>
+                <h3>Vote Count</h3>
+                <p>{movies.vote_count}</p>
+              </div>
+            </div>
+          </div>
+            
+          </div>
+
+        </div>
+
+      </div> 
     </div>
+
   );
 
   }
