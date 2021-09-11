@@ -247,11 +247,20 @@ header.masthead {
   
 
 }
-.info-title{
-  color: white;
-}
 
 .info-img{
   height: 100%;
   width:100%;
+}
+
+.info-card{
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 54%);
+}
+
+.card-info{
+  color: white;
+}
+
+.card{
+  border: none !important;
 }

@@ -29,27 +29,27 @@ function InformationPage() {
             <img className = "info-img" src = {posterUrl + movies.poster_path}></img>
           </div>
 
-          <div class="card">
-            <h1 className = "card-title">{movies.title}</h1>
-            <h3>Description:</h3>
-            <p>{movies.overview}</p>
+          <div class="card info-card">
+            <h1 className = "card-info">{movies.title}</h1>
+            <h3 className = "card-info">Description:</h3>
+            <p className = "card-info">{movies.overview}</p>
             <div class="container">
             <div class="row">
               <div class="col-sm">
-                <h3>Runtime</h3>
-                <p>{movies.runtime + " mins."}</p>
-                <h3>Release Date</h3>
-                <p>{movies.release_date}</p>
-                <h3>Budget</h3>
-                <p>{"$" + movies.budget}</p>
+                <h3 className = "card-info">Runtime</h3>
+                <p className = "card-info">{movies.runtime + " mins."}</p>
+                <h3 className = "card-info">Release Date</h3>
+                <p className = "card-info">{movies.release_date}</p>
+                <h3 className = "card-info">Budget</h3>
+                <p className = "card-info">{"$" + movies.budget}</p>
               </div>
               <div class="col-sm">
-                <h3>Revenue</h3>
-                <p>{"$" + movies.revenue}</p>
-                <h3>Rating</h3>
-                <p>{movies.vote_average + "/10"}</p>
-                <h3>Vote Count</h3>
-                <p>{movies.vote_count}</p>
+                <h3 className = "card-info">Revenue</h3>
+                <p className = "card-info">{"$" + movies.revenue}</p>
+                <h3 className = "card-info">Rating</h3>
+                <p className = "card-info">{movies.vote_average + "/10"}</p>
+                <h3 className = "card-info">Vote Count</h3>
+                <p className = "card-info">{movies.vote_count}</p>
               </div>
             </div>
           </div>
