@@ -26,28 +26,28 @@ function InformationPage() {
         <div class="card-group">
           
           <div class="card">
-            <img src = {posterUrl + movies.poster_path}></img>
+            <img className = "info-img" src = {posterUrl + movies.poster_path}></img>
           </div>
 
           <div class="card">
             <h1 className = "card-title">{movies.title}</h1>
-            <h3>Description</h3>
+            <h3>Description:</h3>
             <p>{movies.overview}</p>
             <div class="container">
             <div class="row">
               <div class="col-sm">
                 <h3>Runtime</h3>
-                <p>{movies.runtime}</p>
+                <p>{movies.runtime + " mins."}</p>
                 <h3>Release Date</h3>
                 <p>{movies.release_date}</p>
                 <h3>Budget</h3>
-                <p>{movies.budget}</p>
+                <p>{"$" + movies.budget}</p>
               </div>
               <div class="col-sm">
                 <h3>Revenue</h3>
-                <p>{movies.revenue}</p>
+                <p>{"$" + movies.revenue}</p>
                 <h3>Rating</h3>
-                <p>{movies.vote_average}</p>
+                <p>{movies.vote_average + "/10"}</p>
                 <h3>Vote Count</h3>
                 <p>{movies.vote_count}</p>
               </div>

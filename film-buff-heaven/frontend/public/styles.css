@@ -252,5 +252,6 @@ header.masthead {
 }
 
 .info-img{
-  object-fit:fill
+  height: 100%;
+  width:100%;
 }
