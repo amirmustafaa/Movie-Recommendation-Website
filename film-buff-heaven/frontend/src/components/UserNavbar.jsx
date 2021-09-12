@@ -21,7 +21,6 @@ function UserNavbar(){
 
     function logout() {
         cookies.set("auth-token", "", { path: '/' }, {httpOnly:true});
-        history.replace("/");
     }
 
     
@@ -46,9 +45,15 @@ function UserNavbar(){
                     <a className="navbar-brand" href="/">Film Buff Heaven</a>
                     <div className="navbar-collapse collapse show" id="navbarResponsive">
                         <ul className="navbar-nav ms-auto">
-                            <li className="nav-item"><a className="nav-link" href="/login">Log In</a></li>
+                            <li className="nav-item"><a  onClick={logout}className="nav-link" href="/">Logout</a></li>
                             <Link style={{ textDecoration: 'none' }}>
                             <li className="nav-item nav-link" onClick={() => {window.location.href="/information/" + num}}>Random Movie</li>
+                            </Link>
+                            <Link style={{ textDecoration: 'none' }}>
+                            <li className="nav-item nav-link" onClick={() => {window.location.href="/information/" + num}}>Create a List</li>
+                            </Link>
+                            <Link style={{ textDecoration: 'none' }}>
+                            <li className="nav-item nav-link" onClick={() => {window.location.href="/information/" + num}}>My Lists</li>
                             </Link>
                         </ul>
                     </div>
