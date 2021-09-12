@@ -8,8 +8,10 @@ import { useHistory} from 'react-router-dom';
 
 
 function UserNavbar(){
-     const cookies = new Cookies();
-     let history = useHistory();
+    const cookies = new Cookies();
+    let history = useHistory();
+    const [dropdown, setDropdown] = useState(false);
+    const toggleOpen = () => setDropdown(!dropdown);
 
     function logout() {
         cookies.set("auth-token", "", { path: '/' }, {httpOnly:true});
@@ -41,16 +43,21 @@ function UserNavbar(){
                             <Link to = "/createlist"style={{ textDecoration: 'none' }}>
                             <li className="nav-item nav-link" >Create a List</li>
                             </Link>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="#">Action</a></li>
-                                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr className="dropdown-divider"></hr></li>
-                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
+                            <li className="nav-item" onClick={toggleOpen}>
+                                <div className="dropdown">
+                                <Link onClick={toggleOpen} className = "nav-link"style={{ textDecoration: 'none' }}>Dropdown</Link>
+                                    <div
+                                    className={`dropdown-menu ${dropdown ? 'show' : ''}`}
+                                    aria-labelledby="dropdownMenuButton"
+                                    >
+                                        <a className="dropdown-item" href="/login">
+                                        Delete
+                                        </a>
+                                        <a className="dropdown-item" href="#">
+                                        Pin to your Profile
+                                        </a>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>
