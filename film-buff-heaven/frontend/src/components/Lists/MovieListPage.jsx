@@ -1,4 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react';
+import { fetchMovieDetail } from '../../service/service';
 import UserContext from "../../context/context";
 import { Link } from "react-router-dom";
 import {useLocation } from 'react-router';
@@ -17,7 +18,7 @@ function MovieList (){
     
 
     const [listState, setListState] = useState([]);
-
+    const [movies, setMovies] = useState([]);
 
     const getData = async () =>{
         
@@ -31,6 +32,8 @@ function MovieList (){
 
         setListState(dataRes.data.entries);
 
+        
+
        
     }
 
@@ -38,8 +41,14 @@ function MovieList (){
         getData();
       },[])
 
+
+   
+
+    
+
       const listItems = listState.filter((number)=> number.length > 0).map((number) =>
       <li><img width="100" height="150" src ={number} alt="Movie Poster"></img></li>
+     
   );
 
     return(

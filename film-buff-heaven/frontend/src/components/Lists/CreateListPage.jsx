@@ -51,7 +51,7 @@ function CreatListPage() {
         history.replace("/");
     }
 
-
+    
     useEffect(() => {
         setList(oldArray => [...oldArray, movie]); 
     }, [movie]);
