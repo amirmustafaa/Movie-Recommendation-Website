@@ -8,6 +8,7 @@ import Information from './Information/Information.jsx';
 import Login from './Login/Login.jsx';
 import Register from './Register/Register.jsx';
 import CreateList from './Lists/CreateList.jsx';
+import MovieList from './Lists/MovieList.jsx';
 
 function App() {
   const cookies = new Cookies();
@@ -55,6 +56,7 @@ function App() {
           {userData.token ? (
             <Switch>
               <Route path= "/createlist" component = {CreateList} />
+              <Route path= "/movielist/:listid"  component = {MovieList} />
               
             </Switch>
 

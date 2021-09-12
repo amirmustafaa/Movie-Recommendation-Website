@@ -2,17 +2,9 @@ import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import { useHistory} from 'react-router-dom';
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavbarText,
-    Button
-  } from 'reactstrap';
 
-import Logo from './logo.png';
+
+
 
 
 function UserNavbar(){
@@ -35,9 +27,6 @@ function UserNavbar(){
 
     let num = movieArr[rand];
 
-
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => setIsOpen(!isOpen);
     return(
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
@@ -49,12 +38,20 @@ function UserNavbar(){
                             <Link style={{ textDecoration: 'none' }}>
                             <li className="nav-item nav-link" onClick={() => {window.location.href="/information/" + num}}>Random Movie</li>
                             </Link>
-                            <Link style={{ textDecoration: 'none' }}>
-                            <li className="nav-item nav-link" onClick={() => {window.location.href="/information/" + num}}>Create a List</li>
+                            <Link to = "/createlist"style={{ textDecoration: 'none' }}>
+                            <li className="nav-item nav-link" >Create a List</li>
                             </Link>
-                            <Link style={{ textDecoration: 'none' }}>
-                            <li className="nav-item nav-link" onClick={() => {window.location.href="/information/" + num}}>My Lists</li>
-                            </Link>
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a className="dropdown-item" href="#">Action</a></li>
+                                    <li><a className="dropdown-item" href="#">Another action</a></li>
+                                    <li><hr className="dropdown-divider"></hr></li>
+                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
