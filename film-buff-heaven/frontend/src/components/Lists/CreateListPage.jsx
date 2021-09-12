@@ -48,12 +48,13 @@ function CreatListPage() {
             headers: { "Authorization":  `Bearer ${token}`},
           });
 
-        history.replace("/");
+        history.replace("/")
     }
 
-    
+
     useEffect(() => {
         setList(oldArray => [...oldArray, movie]); 
+        console.log(movie);
     }, [movie]);
       
     const listItems = list.filter((number)=> number.length > 0).map((number) =>
@@ -63,14 +64,14 @@ function CreatListPage() {
     
 
     return(
-        <div>
+        <div className = "create-list">
+            <input name = "listname" onChange = {handleChange} className="form-control list-name" type="text" placeholder="List Name" aria-label="List Name"/>
             <ol>{listItems}</ol>
             <div className="searchbar md-form active-cyan-2 mb-3">
-            <input name = "listname" onChange = {handleChange} className="form-control" type="text" placeholder="List Name" aria-label="List Name"/>
                  <input name = "moviename" onChange = {handleChange} className="form-control" type="text" placeholder="Search" aria-label="Search"/>
              </div>
              <div className="row justify-content-center my-3 px-3"> <button type = "submit" onClick= {fetchAPI} className="btn-block btn-color">Add Movie</button> </div>
-             <div className="row justify-content-center my-3 px-3"> <button type = "submit" onClick = {createList} className="btn-block btn-color">Create List</button> </div>
+             <div className="row justify-content-center  px-3"> <button type = "submit" onClick = {createList} className="btn-block btn-color">Create List</button> </div>
         </div>
     );
 }

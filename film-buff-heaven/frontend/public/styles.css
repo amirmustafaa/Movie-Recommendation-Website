@@ -228,7 +228,7 @@ header.masthead {
 /********************* Create List ******************************/
 
 .searchbar{
-  margin-top: 20%;
+  margin-top: 20%
 }
 
 /********************* Information Page ******************************/
@@ -272,4 +272,13 @@ header.masthead {
 
 .dp{
   background-color: black;
+}
+
+.create-list{
+  padding-top: 5%;
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(54,0,29,1) 54%, rgba(0,0,0,1) 100%);
+}
+
+.list-name{
+  
 }
