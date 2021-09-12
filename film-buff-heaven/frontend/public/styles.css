@@ -265,3 +265,11 @@ header.masthead {
 .card{
   border: none !important;
 }
+
+.drop{
+  color: black;
+}
+
+.dp{
+  background-color: black;
+}

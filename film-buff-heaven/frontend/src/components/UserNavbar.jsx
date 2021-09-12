@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import UserContext from "../context/context";
 import { Link } from "react-router-dom";
 import Axios from 'axios';
@@ -17,6 +17,8 @@ function UserNavbar(){
     const [dropdown, setDropdown] = useState(false);
     const toggleOpen = () => setDropdown(!dropdown);
 
+    const [listState, setListState] = useState([]);
+
     function logout() {
         cookies.set("auth-token", "", { path: '/' }, {httpOnly:true});
     }
@@ -28,8 +30,14 @@ function UserNavbar(){
             headers: { "Authorization":  `Bearer ${token}`},
           });
 
+        setListState(dataRes.data);
+
        
     }
+
+    useEffect(() => {
+        getData();
+      },[])
 
     let movieArr = [278, 238, 424, 240, 129, 496243, 497, 389, 680, 155, 122, 13, 11216, 637, 
                     429, 346, 311, 539, 550, 324857, 429617, 399566, 557, 527774, 475557,578701, 
@@ -63,6 +71,13 @@ function UserNavbar(){
                                     aria-labelledby="dropdownMenuButton"
                                     >
                                     
+                              {listState.map(function(d, idx){
+                                return  (
+                                    <Link  className = "drop" style={{ textDecoration: 'none' }} key = {idx}  to={{ pathname: '/movielist/' + d.id, state: { data: d.id} }}>
+                                    <p key = {idx}>{d.name}</p>
+                                    </Link>
+                                );
+                                })}
                                     </div>
                                 </div>
                             </li>

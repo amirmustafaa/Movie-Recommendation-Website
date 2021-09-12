@@ -10,5 +10,5 @@ import com.filmbuffheaven.models.MovieList;
 
 @Repository
 public interface ListRepository extends JpaRepository<MovieList, Long> {
-	Optional<MovieList> findOneById(Long id);
+		 Optional<MovieList> findById(Long id);
 }
