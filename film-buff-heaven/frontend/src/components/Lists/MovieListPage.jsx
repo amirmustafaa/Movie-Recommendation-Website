@@ -47,13 +47,14 @@ function MovieList (){
     
 
       const listItems = listState.filter((number)=> number.length > 0).map((number) =>
-      <li><img width="100" height="150" src ={number} alt="Movie Poster"></img></li>
+      <li className = "poster-item"><img width="100" height="150" src ={number} alt="Movie Poster"></img></li>
      
   );
 
     return(
-        <div>
-            <ol>{listItems}</ol>
+        <div className = "create-list">
+            <ol className = "poster-list">{listItems}</ol>
+            
         </div>
     );
 }

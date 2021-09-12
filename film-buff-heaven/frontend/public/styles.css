@@ -277,6 +277,7 @@ header.masthead {
 .create-list{
   padding-top: 5%;
   background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(54,0,29,1) 54%, rgba(0,0,0,1) 100%);
+  height: 100%;
 }
 
 .list-name{
@@ -285,6 +286,8 @@ header.masthead {
 
 .poster-list{
   margin-left: 45%;
+  padding-bottom: 20%;
+  margin-bottom: 0%;
 }
 
 .poster-item{
