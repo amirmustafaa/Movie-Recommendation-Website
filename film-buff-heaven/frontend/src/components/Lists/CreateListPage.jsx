@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext} from "react";
+import {Link, useHistory} from 'react-router-dom';
 import Axios from 'axios';
 import UserContext from "../../context/context";
 import {
@@ -9,6 +10,7 @@ function CreatListPage() {
     
     const {userData} = useContext(UserContext);
     const token = userData.token;
+    let history = useHistory();
     const [state, setState] = useState({
         moviename: "",
         listname: ""
@@ -46,22 +48,9 @@ function CreatListPage() {
             headers: { "Authorization":  `Bearer ${token}`},
           });
 
-        console.log(listRes);
-
-
+        history.replace("/");
     }
 
-    const getData = async () =>{
-
-        
-        const listObject = {
-            listId: 1,
-          };
-
-        const dataRes = await Axios.post("http://localhost:8080/api/data/getlist", listObject, {
-            headers: { "Authorization":  `Bearer ${token}`},
-          });
-    }
 
     useEffect(() => {
         setList(oldArray => [...oldArray, movie]); 
@@ -82,7 +71,6 @@ function CreatListPage() {
              </div>
              <div className="row justify-content-center my-3 px-3"> <button type = "submit" onClick= {fetchAPI} className="btn-block btn-color">Add Movie</button> </div>
              <div className="row justify-content-center my-3 px-3"> <button type = "submit" onClick = {createList} className="btn-block btn-color">Create List</button> </div>
-             <div className="row justify-content-center my-3 px-3"> <button type = "submit" onClick = {getData} className="btn-block btn-color">Get Data</button> </div>
         </div>
     );
 }
