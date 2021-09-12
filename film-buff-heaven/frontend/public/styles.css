@@ -280,5 +280,13 @@ header.masthead {
 }
 
 .list-name{
-  
+  margin-bottom: 3%;
+}
+
+.poster-list{
+  margin-left: 45%;
+}
+
+.poster-item{
+  margin-bottom: 2%;
 }
