@@ -23,14 +23,12 @@ function UserNavbar(){
 
     const getData = async () =>{
 
-        
-        const listObject = {
-            listId: 1,
-          };
 
-        const dataRes = await Axios.post("http://localhost:8080/api/data/getlist", listObject, {
+        const dataRes = await Axios.get("http://localhost:8080/api/data/getlist",{
             headers: { "Authorization":  `Bearer ${token}`},
           });
+
+       
     }
 
     let movieArr = [278, 238, 424, 240, 129, 496243, 497, 389, 680, 155, 122, 13, 11216, 637, 
@@ -54,7 +52,7 @@ function UserNavbar(){
                             <Link style={{ textDecoration: 'none' }}>
                             <li className="nav-item nav-link" onClick={() => {window.location.href="/information/" + num}}>Random Movie</li>
                             </Link>
-                            <Link to = "/createlist"style={{ textDecoration: 'none' }}>
+                            <Link to = "/createlist" style={{ textDecoration: 'none' }}>
                             <li className="nav-item nav-link" >Create a List</li>
                             </Link>
                             <li className="nav-item" onClick={toggleOpen}>
