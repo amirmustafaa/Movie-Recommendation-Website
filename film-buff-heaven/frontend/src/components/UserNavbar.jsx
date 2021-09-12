@@ -1,5 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import UserContext from "../context/context";
 import { Link } from "react-router-dom";
+import Axios from 'axios';
 import Cookies from 'universal-cookie';
 import { useHistory} from 'react-router-dom';
 
@@ -9,7 +11,9 @@ import { useHistory} from 'react-router-dom';
 
 function UserNavbar(){
     const cookies = new Cookies();
-    let history = useHistory();
+    const {userData} = useContext(UserContext);
+    const token = userData.token;
+
     const [dropdown, setDropdown] = useState(false);
     const toggleOpen = () => setDropdown(!dropdown);
 
@@ -17,7 +21,17 @@ function UserNavbar(){
         cookies.set("auth-token", "", { path: '/' }, {httpOnly:true});
     }
 
-    
+    const getData = async () =>{
+
+        
+        const listObject = {
+            listId: 1,
+          };
+
+        const dataRes = await Axios.post("http://localhost:8080/api/data/getlist", listObject, {
+            headers: { "Authorization":  `Bearer ${token}`},
+          });
+    }
 
     let movieArr = [278, 238, 424, 240, 129, 496243, 497, 389, 680, 155, 122, 13, 11216, 637, 
                     429, 346, 311, 539, 550, 324857, 429617, 399566, 557, 527774, 475557,578701, 
@@ -45,17 +59,12 @@ function UserNavbar(){
                             </Link>
                             <li className="nav-item" onClick={toggleOpen}>
                                 <div className="dropdown">
-                                <Link onClick={toggleOpen} className = "nav-link"style={{ textDecoration: 'none' }}>Dropdown</Link>
+                                <Link onClick={toggleOpen} className = "nav-link"style={{ textDecoration: 'none' }}>My Lists</Link>
                                     <div
                                     className={`dropdown-menu ${dropdown ? 'show' : ''}`}
                                     aria-labelledby="dropdownMenuButton"
                                     >
-                                        <a className="dropdown-item" href="/login">
-                                        Delete
-                                        </a>
-                                        <a className="dropdown-item" href="#">
-                                        Pin to your Profile
-                                        </a>
+                                    
                                     </div>
                                 </div>
                             </li>

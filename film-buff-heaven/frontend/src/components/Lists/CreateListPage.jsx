@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext} from "react";
 import Axios from 'axios';
-import UserContext from "../../context/context"
+import UserContext from "../../context/context";
 import {
     fetchMovieSearch
   } from "../../service/service.js";
@@ -61,10 +61,6 @@ function CreatListPage() {
         const dataRes = await Axios.post("http://localhost:8080/api/data/getlist", listObject, {
             headers: { "Authorization":  `Bearer ${token}`},
           });
-
-        console.log(dataRes);
-
-
     }
 
     useEffect(() => {
