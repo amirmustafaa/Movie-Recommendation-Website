@@ -48,15 +48,16 @@ function MovieList (){
     
 
       const listItems = listState.filter((number)=> number.length > 0).map((number) =>
-      <li className = "poster-item"><img width="140" height="209" src ={number} alt="Movie Poster"></img></li>
+      <li className = "poster-item "><img width="160" height="229" src ={number} alt="Movie Poster"></img></li>
      
   );
 
     return(
         <div className = "create-list">
+            <div  className = "list-container">
             <h1 className = "list-title">{name}</h1>
-            <ol className = "poster-list">{listItems}</ol>
-            
+            <ul className = "list-group-numbered poster-list">{listItems}</ul>
+            </div>
         </div>
     );
 }

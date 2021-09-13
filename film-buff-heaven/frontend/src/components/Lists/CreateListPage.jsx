@@ -58,7 +58,7 @@ function CreatListPage() {
     }, [movie]);
       
     const listItems = list.filter((number)=> number.length > 0).map((number) =>
-        <li className = "poster-item"><img width="100" height="150" src ={number} alt="Movie Poster"></img></li>
+        <li className = "poster-item"><img width="160" height="229" src ={number} alt="Movie Poster"></img></li>
     );
 
     
@@ -66,12 +66,12 @@ function CreatListPage() {
     return(
         <div className = "create-list">
             <input name = "listname" onChange = {handleChange} className="form-control list-name" type="text" placeholder="List Name" aria-label="List Name"/>
-            <ol className = "poster-list">{listItems}</ol>
+            <ul className = "list-group-numbered poster-list">{listItems}</ul>
             <div className="searchbar md-form active-cyan-2 mb-3">
-                 <input name = "moviename" onChange = {handleChange} className="form-control" type="text" placeholder="Search" aria-label="Search"/>
+                 <input name = "moviename" onChange = {handleChange} className=" list-name form-control" type="text" placeholder="Enter Movie" aria-label="Search"/>
              </div>
-             <div className="row justify-content-center my-3 px-3"> <button type = "submit" onClick= {fetchAPI} className="btn-block btn-color">Add Movie</button> </div>
-             <div className="row justify-content-center  px-3"> <button type = "submit" onClick = {createList} className="btn-block btn-color">Create List</button> </div>
+             <div className="row my-3 px-3 list-button"> <button type = "submit" onClick= {fetchAPI} className=" list-button btn-block btn-color">Add Movie</button> </div>
+             <div className="row px-3 list-button "> <button type = "submit" onClick = {createList} className=" list-button btn-block btn-color">Create List</button> </div>
         </div>
     );
 }

@@ -61,7 +61,7 @@ function RegisterPage (){
                         </div>
                     </div>
                     <div className="bottom text-center mb-5">
-                        <p href="#" className="sm-text mx-auto mb-3">Already Have an Account?<Link to="/login"><button className="btn btn-white ml-2">LOGIN</button></Link></p>
+                        <p href="#" className="sm-text mx-auto mb-3">Already Have an Account?<Link to="/login"><button className="btn btn-white ml-2">Login</button></Link></p>
                     </div>
 
                 </div>
