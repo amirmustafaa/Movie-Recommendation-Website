@@ -293,3 +293,8 @@ header.masthead {
 .poster-item{
   margin-bottom: 2%;
 }
+
+.list-title{
+  color: white;
+  text-align: center;
+}

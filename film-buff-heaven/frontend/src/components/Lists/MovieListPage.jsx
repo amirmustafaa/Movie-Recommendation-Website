@@ -18,6 +18,7 @@ function MovieList (){
     
 
     const [listState, setListState] = useState([]);
+    const [name, setName] = useState();
     const [movies, setMovies] = useState([]);
 
     const getData = async () =>{
@@ -31,7 +32,7 @@ function MovieList (){
           });
 
         setListState(dataRes.data.entries);
-
+        setName(dataRes.data.name);
         
 
        
@@ -53,6 +54,7 @@ function MovieList (){
 
     return(
         <div className = "create-list">
+            <h1 className = "list-title">{name}</h1>
             <ol className = "poster-list">{listItems}</ol>
             
         </div>

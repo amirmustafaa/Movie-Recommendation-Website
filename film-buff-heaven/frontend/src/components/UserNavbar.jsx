@@ -73,7 +73,7 @@ function UserNavbar(){
                                     
                               {listState.map(function(d, idx){
                                 return  (
-                                    <Link  className = "drop" style={{ textDecoration: 'none' }} key = {idx}  to={{ pathname: '/movielist/' + d.id, state: { data: d.id} }}>
+                                    <Link   className = "drop" style={{ textDecoration: 'none' }} key = {idx}   onClick={() => {window.location.href='/movielist/' + d.id}} >
                                     <p key = {idx}>{d.name}</p>
                                     </Link>
                                 );
