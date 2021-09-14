@@ -35,9 +35,7 @@ function CreatListPage() {
     const fetchAPI = async () => {
         
         const dataRes = (await fetchMovieSearch(state.moviename));
-        if(dataRes === ""){
-
-        }else{
+        if(dataRes !== ""){
         setMovie(dataRes.poster);
         setId(dataRes.id);
         } 
@@ -82,7 +80,7 @@ function CreatListPage() {
             <input name = "listname" onChange = {handleChange} className="form-control list-name" type="text" placeholder="Enter List Name" aria-label="List Name"/>
             <ul className = "list-group-numbered poster-list">{listItems}</ul>
             <div className="searchbar md-form active-cyan-2 mb-3">
-                 <input name = "moviename" onChange = {handleChange} className=" list-name form-control" type="text" placeholder="Enter Movie" aria-label="Search"/>
+                 <input name = "moviename" onChange = {handleChange} className=" list-name enter-movie form-control" type="text" placeholder="Enter Movie" aria-label="Search"/>
              </div>
              <div className="row my-3 px-3 list-button"> <button type = "submit" onClick= {fetchAPI} className=" list-button btn-block btn-color">Add Movie</button> </div>
              <div className="row px-3 list-button "> <button type = "submit" onClick = {createList} className=" list-button btn-block btn-color">Create List</button> </div>
