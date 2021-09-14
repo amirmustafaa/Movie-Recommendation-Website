@@ -43,6 +43,7 @@ function MovieList (){
         getData();
       },[])
 
+      
  
       let i = 1;
     

@@ -35,8 +35,12 @@ function CreatListPage() {
     const fetchAPI = async () => {
         
         const dataRes = (await fetchMovieSearch(state.moviename));
+        if(dataRes === ""){
+
+        }else{
         setMovie(dataRes.poster);
-        setId(dataRes.id); 
+        setId(dataRes.id);
+        } 
       
         
     };
@@ -75,7 +79,7 @@ function CreatListPage() {
 
     return(
         <div className = "create-list">
-            <input name = "listname" onChange = {handleChange} className="form-control list-name" type="text" placeholder="List Name" aria-label="List Name"/>
+            <input name = "listname" onChange = {handleChange} className="form-control list-name" type="text" placeholder="Enter List Name" aria-label="List Name"/>
             <ul className = "list-group-numbered poster-list">{listItems}</ul>
             <div className="searchbar md-form active-cyan-2 mb-3">
                  <input name = "moviename" onChange = {handleChange} className=" list-name form-control" type="text" placeholder="Enter Movie" aria-label="Search"/>
