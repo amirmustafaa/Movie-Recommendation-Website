@@ -96,12 +96,17 @@ export const fetchMovieSearch = async (name) => {
         })
         
         const posterUrl = 'https://image.tmdb.org/t/p/original/';
-        
+        const modifiedData =  {
+          poster: posterUrl+data.results[0].poster_path,
+          id: data.results[0].id
+
+        };
+
         if(data.results[0] === undefined){
             alert("Movie Not Found")
             return "";
         }
-        return posterUrl+data.results[0].poster_path;
+        return modifiedData;
     } catch (error) { }
 }
 

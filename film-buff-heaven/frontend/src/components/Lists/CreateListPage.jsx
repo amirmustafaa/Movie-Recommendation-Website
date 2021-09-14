@@ -18,8 +18,10 @@ function CreatListPage() {
 
    
     const [movie, setMovie] = useState("");
+    const [id, setId] = useState();
 
     const [list, setList] = useState([])
+    const [idList, setIdList] = useState([]);
 
 
     function handleChange(event){
@@ -32,7 +34,10 @@ function CreatListPage() {
     
     const fetchAPI = async () => {
         
-        setMovie(await fetchMovieSearch(state.moviename)); 
+        const dataRes = (await fetchMovieSearch(state.moviename));
+        setMovie(dataRes.poster);
+        setId(dataRes.id); 
+      
         
     };
 
@@ -42,11 +47,13 @@ function CreatListPage() {
         const listObject = {
             name: state.listname,
             entries: list,
+            movieId: idList
           };
 
         const listRes = await Axios.post("http://localhost:8080/api/data/createlist", listObject, {
             headers: { "Authorization":  `Bearer ${token}`},
           });
+        
 
         history.replace("/")
     }
@@ -54,8 +61,11 @@ function CreatListPage() {
 
     useEffect(() => {
         setList(oldArray => [...oldArray, movie]); 
-        console.log(movie);
     }, [movie]);
+
+    useEffect(() => {
+      setIdList(oldArray2 => [...oldArray2, id]); 
+  }, [id]);
       
     const listItems = list.filter((number)=> number.length > 0).map((number) =>
         <li className = "poster-item"><img width="160" height="229" src ={number} alt="Movie Poster"></img></li>

@@ -18,6 +18,7 @@ function MovieList (){
     
 
     const [listState, setListState] = useState([]);
+    const [idListState, setIdListState] = useState([]);
     const [name, setName] = useState();
     const [movies, setMovies] = useState([]);
 
@@ -32,24 +33,21 @@ function MovieList (){
           });
 
         setListState(dataRes.data.entries);
+        setIdListState(dataRes.data.movieId);
         setName(dataRes.data.name);
-        
-
        
     }
+    
 
     useEffect(() => {
         getData();
       },[])
 
-
-   
-
+ 
+      let i = 1;
     
-
       const listItems = listState.filter((number)=> number.length > 0).map((number) =>
-      <li className = "poster-item "><img width="160" height="229" src ={number} alt="Movie Poster"></img></li>
-     
+      <li className = "poster-item "><a href = {"/information/"+ idListState[i++]}><img  width="160" height="229" src ={number} alt="Movie Poster"></img></a></li>,
   );
 
     return(
