@@ -81,7 +81,6 @@ header.masthead {
   /********************* Home Content ******************************/
   .home-content{
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(54,0,29,1) 54%, rgba(0,0,0,1) 100%);
-
   }
 
   .home-title{
@@ -327,7 +326,7 @@ header.masthead {
 
 @media (max-width: 768px) {
   .list-name{
-    margin-top: 40%;
+    margin-top: 4%;
   }
   .list-button{
     width:50%;
